@@ -47,8 +47,9 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR "-1"
 set_global_assignment -name POWER_EXT_SUPPLY_VOLTAGE_TO_REGULATOR 3.3V
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
+set_global_assignment -name VERILOG_FILE Char_a.v
 set_global_assignment -name VERILOG_FILE Multiplexer5.v
-set_global_assignment -name VERILOG_FILE Rom.v
 set_global_assignment -name VERILOG_FILE Matrix.v
 set_global_assignment -name VERILOG_FILE Main.v
 set_global_assignment -name VERILOG_FILE Linha.v
@@ -56,8 +57,25 @@ set_global_assignment -name VERILOG_FILE DivFreq.v
 set_global_assignment -name VERILOG_FILE DivClk.v
 set_global_assignment -name VERILOG_FILE DflipFlop.v
 set_global_assignment -name VERILOG_FILE Demultiplexer5.v
-set_global_assignment -name VERILOG_FILE Decodificador_aceito.v
 set_global_assignment -name VERILOG_FILE Counter.v
 set_global_assignment -name VERILOG_FILE Colunas.v
-set_global_assignment -name VERILOG_FILE Chars.v
-set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "NO HEAT SINK WITH STILL AIR"
+set_global_assignment -name VERILOG_FILE Char_c.v
+set_global_assignment -name VERILOG_FILE Char_d.v
+set_global_assignment -name VERILOG_FILE Char_e.v
+set_global_assignment -name VERILOG_FILE Char_i.v
+set_global_assignment -name VERILOG_FILE Char_j.v
+set_global_assignment -name VERILOG_FILE Char_m.v
+set_global_assignment -name VERILOG_FILE Char_o.v
+set_global_assignment -name VERILOG_FILE Char_p.v
+set_global_assignment -name VERILOG_FILE Char_r.v
+set_global_assignment -name VERILOG_FILE Char_t.v
+set_global_assignment -name VERILOG_FILE Multiplex_caracter.v
+set_global_assignment -name VERILOG_FILE Multiplexer16.v
+set_global_assignment -name VERILOG_FILE Gen_char.v
+set_global_assignment -name VERILOG_FILE Aceito.v
+set_global_assignment -name VERILOG_FILE Comprometido.v
+set_global_assignment -name VERILOG_FILE Coder_mensage.v
+set_global_assignment -name VERILOG_FILE Select_mensage.v
+set_global_assignment -name VERILOG_FILE Multiplexer4.v
+set_global_assignment -name VERILOG_FILE Rejeitado.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf

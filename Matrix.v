@@ -8,7 +8,7 @@ module Matrix(C0, C1, C2, C3, C4, L0, L1, L2, L3, L4, L5, L6, clk_191hz, prox_co
   
   wire [2:0] counter_Value, max_5;
   assign max_5 = 3'b100;
-  Counter #(3) counter(counter_Value, , max_5, clk_191hz, rst);
+  Counter #(3) counter(counter_Value, max_5, clk_191hz, rst);
   
   Linha linha0(linha_0, prox_col[6], clk_6hz, counter_Value, rst);
   Linha linha1(linha_1, prox_col[5], clk_6hz, counter_Value, rst);
