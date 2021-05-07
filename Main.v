@@ -1,12 +1,11 @@
-module Main(aceito, comprometido, rejeitado, clk50Mhz, rst, C0, C1, C2, C3, C4, L0, L1, L2, L3, L4, L5, L6);
+module Main(aceito, comprometido, rejeitado, clk50Mhz, C0, C1, C2, C3, C4, L0, L1, L2, L3, L4, L5, L6);
 
-  input clk50Mhz, rst, aceito, comprometido, rejeitado;
+  input clk50Mhz, aceito, comprometido, rejeitado;
   output C0, C1, C2, C3, C4, L0, L1, L2, L3, L4, L5, L6;
   
-  wire clk6hz, clk191hz, finish;
+  wire clk6hz, clk191hz, finish, rst;
   wire [3:0] counter_coluna_value, counter_caracter_value, len_string;
   wire [6:0] next_col;
-  wire [6:0] gen_char_out;
   
   DivClk divClk(clk6hz, clk191hz, clk50Mhz);
   Counter #(4) counter_coluna(counter_coluna_value,'b0101, clk6hz, rst);
@@ -16,5 +15,7 @@ module Main(aceito, comprometido, rejeitado, clk50Mhz, rst, C0, C1, C2, C3, C4, 
   gen_char gen_char(next_col, finish, caracter_code, counter_coluna_value);
   
   Matrix matrix(C0, C1, C2, C3, C4, L0, L1, L2, L3, L4, L5, L6, clk191hz, next_col, clk6hz, rst);
+  
+  observerChangeState observerChangeState(rst, clk50Mhz, aceito, comprometido, rejeitado);
   
 endmodule

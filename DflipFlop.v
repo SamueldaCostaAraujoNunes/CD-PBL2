@@ -1,7 +1,7 @@
 module DflipFlop(output reg q, input rst, input clk, input d);  
-    always @ (posedge clk)  
+    always @ (posedge clk or posedge rst)  
        if (rst)  
-          q <= 0;  
+          q <= 1;  
        else  
           q <= d;  
 endmodule  

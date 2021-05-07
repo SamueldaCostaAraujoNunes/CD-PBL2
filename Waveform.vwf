@@ -23,6 +23,16 @@ quit -f
 
 
 
+
+
+
+
+
+
+
+
+
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -41,6 +51,16 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -241,16 +261,6 @@ SIGNAL("rejeitado")
 	PARENT = "";
 }
 
-SIGNAL("rst")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
 TRANSITION_LIST("C0")
 {
 	NODE
@@ -364,7 +374,9 @@ TRANSITION_LIST("aceito")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 100000.0;
+		LEVEL 0 FOR 4480.0;
+		LEVEL 1 FOR 6400.0;
+		LEVEL 0 FOR 89120.0;
 	}
 }
 
@@ -387,20 +399,13 @@ TRANSITION_LIST("comprometido")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 100000.0;
+		LEVEL 1 FOR 4480.0;
+		LEVEL 0 FOR 6400.0;
+		LEVEL 1 FOR 89120.0;
 	}
 }
 
 TRANSITION_LIST("rejeitado")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 1 FOR 100000.0;
-	}
-}
-
-TRANSITION_LIST("rst")
 {
 	NODE
 	{
@@ -550,15 +555,6 @@ DISPLAY_LINE
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 15;
-	TREE_LEVEL = 0;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "rst";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
-	TREE_INDEX = 16;
 	TREE_LEVEL = 0;
 }
 

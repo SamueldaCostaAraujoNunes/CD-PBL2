@@ -4,7 +4,7 @@ module rejeitado(caracter, len_string, counter_caracter);
   input [3:0] counter_caracter;
   
   wire [3:0] multiplexer_out, R, E, J, I, T, A, D, O;
-  Multiplexer16 #(4) multiplex(multiplexer_out, R, E, J, E, I, T, A, D, O, , , , , , , ,counter_caracter);
+  Multiplexer9 #(4) multiplex(multiplexer_out, R, E, J, E, I, T, A, D, O,counter_caracter);
   assign caracter = multiplexer_out;
   assign len_string = 4'b1000;
   
